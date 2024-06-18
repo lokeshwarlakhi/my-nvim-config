@@ -50,3 +50,7 @@ opt.mouse = "" -- Disable mouse support
 opt.foldlevel = 20 -- Set fold level
 opt.foldmethod = "expr" -- Use expression for folding
 opt.foldexpr = "nvim_treesitter#foldexpr()" -- Utilize Treesitter folds
+
+--Buffer-Line
+opt.termguicolors = true
+require("bufferline").setup{}

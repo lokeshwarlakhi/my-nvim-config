@@ -3,6 +3,11 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+-- Buffer 
+keymap.set("n","<leader>n",":bn<CR>")
+keymap.set("n","<leader>p",":bp<CR>")
+keymap.set("n","<leader>x",":bd<CR>")
+
 -- General keymaps
 keymap.set("i", "jk", "<ESC>") -- exit insert mode with jk
 keymap.set("i", "<c-k>", "<Esc>:m .-2<CR>==gi") -- move current line up in insert mode
@@ -15,7 +20,8 @@ keymap.set("i", "ii", "<ESC>") -- exit insert mode with ii
 keymap.set("n", "<leader>wq", ":wq<CR>") -- save and quit
 keymap.set("n", "<leader>qq", ":q!<CR>") -- quit without saving
 keymap.set("n", "<leader>ww", ":w<CR>") -- save
-keymap.set("n", "gx", ":!open <c-r><c-a><CR>") -- open URL under cursor
+keymap.set("n", "gx", ":!open <c-r><c-a><CR>") -- open URL under cursorline
+--
 
 -- Split window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
@@ -141,3 +147,6 @@ keymap.set("n", '<leader>d?', function() local widgets = require "dap.ui.widgets
 keymap.set("n", '<leader>df', '<cmd>Telescope dap frames<cr>') -- list frames
 keymap.set("n", '<leader>dh', '<cmd>Telescope dap commands<cr>') -- list commands
 keymap.set("n", '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end) -- search diagnostics
+
+-- Markdown preview
+keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<CR>")
