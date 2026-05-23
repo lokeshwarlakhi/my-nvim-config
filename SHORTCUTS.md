@@ -47,6 +47,12 @@ Master these first to handle 80% of your daily operations:
 | `<leader>p` | Switch to previous buffer tab |
 | `<leader>x` | Close current buffer tab safely |
 
+### Smooth Scrolling
+| Keymap | Description |
+|---|---|
+| `<C-d>` / `<C-u>` | Smoothly scroll half-page Down / Up (neoscroll.nvim) |
+| `<C-f>` / `<C-b>` | Smoothly scroll full-page Down / Up (neoscroll.nvim) |
+
 ### Splitting and Window Sizing
 | Keymap | Description |
 |---|---|

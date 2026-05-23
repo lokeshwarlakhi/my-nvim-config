@@ -79,6 +79,8 @@ Instead of scattered configurations, all setups (LSP, Formatters, Linters, Debug
 | --- | --- | --- |
 | `Alt + j` / `Alt + k` | Normal/Insert/Visual | Move current line or selection Down/Up |
 | `Ctrl + h/j/k/l` | Normal | Seamlessly switch focus between window splits |
+| `Ctrl + d` / `Ctrl + u` | Normal | Smoothly scroll half-page Down / Up (neoscroll.nvim) |
+| `Ctrl + f` / `Ctrl + b` | Normal | Smoothly scroll full-page Down / Up (neoscroll.nvim) |
 | `<leader>sh` / `sv` | Normal | Split window Horizontally / Vertically |
 | `<leader>sc` | Normal | Close current split pane |
 | `<leader>x` | Normal | Close current buffer (keeps window layouts intact) |
