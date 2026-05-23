@@ -1,531 +1,128 @@
----
-name: Keyboard Shortcuts Reference
-description: Complete categorized keymaps and workflows
----
+# Workstation Keyboard Shortcuts Reference
 
-# ⌨️ KEYBOARD SHORTCUTS REFERENCE
+This cheatsheet lists all available keybindings, categorized by development concerns.
 
-Complete searchable guide to all keybindings organized by workflow.
+**Leader Key**: `<space>` (spacebar)
 
 ---
 
-## 🚀 Quick Start: Most Important 10 Keymaps
+## 1. Top 10 Essential Shortcuts
 
-These 10 keymaps will handle 80% of your workflow:
+Master these first to handle 80% of your daily operations:
 
-```
-Leader Key: <space>
-
-<space>ff   Find files in project
-<space>fg   Live grep (search text)
-<space>ca   Code actions (quick fixes, refactor)
-gd          Go to definition
-K           Hover documentation
-<space>rn   Rename symbol
-<space>lf   Format file
-:q          Quit
-:w          Save
-<space>n    Next buffer
-```
+| Keymap | Description | Context |
+|---|---|---|
+| `<leader>ff` | Search for files in project | Normal |
+| `<leader>fg` | Search for text in project (live grep) | Normal |
+| `gd` | Go to definition of symbol | Normal (LSP) |
+| `K` | Show hover documentation | Normal (LSP) |
+| `<leader>ca` | Show code actions (quick-fixes, imports) | Normal (LSP) |
+| `<leader>rn` | Rename symbol globally | Normal (LSP) |
+| `<leader>lf` | Format current document | Normal / Visual |
+| `<leader>e` | Toggle file explorer sidebar (Neo-tree) | Normal |
+| `<leader>o` | Toggle code symbols outline (Aerial) | Normal |
+| `jk` | Exit insert mode / terminal mode | Insert / Terminal |
 
 ---
 
-## 📋 Navigation & Finding
+## 2. File Finding & Fuzzy Search (Telescope)
 
-### File Finding
-```
-<leader>ff  Find files (Telescope)
-<leader>fg  Live grep - search text in project
-<leader>fb  Open buffer (recent files)
-<leader>fs  Buffer fuzzy search (current file)
-<leader>fh  Help tags (documentation)
-
-<leader>ft  Grep in file explorer selection
-<leader>fo  Document symbols (in current file)
-<leader>fS  Workspace symbols (search all symbols)
-```
-
-### Code Navigation
-```
-gd          Go to definition
-gD          Go to declaration
-gi          Go to implementation
-gt          Go to type definition
-gr          Go to references (show where used)
-
-<leader>li  Incoming calls (functions that call this)
-<leader>lo  Outgoing calls (functions this calls)
-
-[d          Previous diagnostic/error
-]d          Next diagnostic/error
-```
-
-### Window & Split Management
-```
-<leader>sv  Split vertical (vsplit)
-<leader>sh  Split horizontal (split)
-<leader>se  Make splits equal size
-<leader>sx  Close split
-<leader>sj  Decrease split height
-<leader>sk  Increase split height
-<leader>sl  Increase split width
-<leader>sh  Decrease split width
-
-<C-h>       Move to left split
-<C-j>       Move to down split
-<C-k>       Move to up split
-<C-l>       Move to right split
-```
-
-### Buffer Management
-```
-<leader>n   Next buffer
-<leader>p   Previous buffer
-<leader>x   Close buffer (delete)
-<leader>w   Save buffer
-<leader>ww  Save all buffers
-```
-
-### File Explorer (Neo-tree)
-```
-<leader>e   Toggle file explorer
-<C-n>       Show file explorer (focused)
-
-Within Explorer:
-H           Toggle hidden files
-.           Set current folder as root
-<bs>        Navigate up to parent
-```
+| Keymap | Description |
+|---|---|
+| `<leader>ff` | Search for files by name in workspace |
+| `<leader>fg` | Search for text strings across all project files |
+| `<leader>fb` | List and search active editor buffers |
+| `<leader>fs` | Fuzzy search text inside the current active file |
+| `<leader>fh` | Search Neovim help documentation tags |
+| `<leader>ft` | Find all TODO / FIXME comments in project |
 
 ---
 
-## 🧠 LSP & Code Intelligence
+## 3. Editor Navigation & Window Management
 
-### Information & Documentation
-```
-K           Hover documentation (shows type, docstring)
-<C-k>       Signature help (in insert mode)
-<leader>d   Show diagnostic at cursor
+### Buffer Tabs
+| Keymap | Description |
+|---|---|
+| `<leader>n` | Switch to next buffer tab |
+| `<leader>p` | Switch to previous buffer tab |
+| `<leader>x` | Close current buffer tab safely |
 
-[d          Jump to previous error/warning
-]d          Jump to next error/warning
-```
+### Splitting and Window Sizing
+| Keymap | Description |
+|---|---|
+| `<C-h>` / `<C-l>` | Move cursor to left / right window split |
+| `<C-j>` / `<C-k>` | Move cursor to lower / upper window split |
+| `<leader>sv` | Split window vertically |
+| `<leader>sh` | Split window horizontally |
+| `<leader>se` | Equalize size of all splits |
+| `<leader>sx` | Close current window split |
+| `<leader>sk` / `<leader>sj` | Increase / Decrease split window height |
+| `<leader>s>` / `<leader>s<` | Increase / Decrease split window width |
 
-### Refactoring & Code Actions
-```
-<leader>rn  Rename symbol (all occurrences)
-<leader>ca  Code actions (context menu)
-<leader>co  Organize imports
-<leader>cf  Fix diagnostic (quick fix)
-<leader>lf  Format document
-
-v <leader>lf Format selection (in visual mode)
-```
-
-### Symbols & Outline
-```
-<leader>fs  Document symbols (show all in file)
-<leader>fS  Workspace symbols (search entire project)
-<leader>fm  Methods/functions in file
-```
-
-### Workspace Management
-```
-<leader>wa  Add folder to workspace
-<leader>wr  Remove folder from workspace
-<leader>wl  List all workspace folders
-```
+### Code Navigation (LSP)
+| Keymap | Description |
+|---|---|
+| `gd` | Jump to definition of symbol |
+| `gD` | Jump to declaration |
+| `gi` | Jump to implementation |
+| `gr` | Show all references of symbol in quickfix list |
+| `gt` | Jump to type definition |
+| `[d` / `]d` | Jump to previous / next diagnostic warning or error |
+| `<leader>d` | Open detailed diagnostic warning in a float window |
 
 ---
 
-## 🐛 Debugging (DAP)
+## 4. Code Refactoring & Manipulation
 
-*Debug keymaps added when debug adapter is available*
-
-```
-<leader>db  Toggle breakpoint at cursor
-<leader>dc  Continue execution
-<leader>ds  Step over (execute current line)
-<leader>di  Step into (go into function)
-<leader>do  Step out (exit current function)
-
-<leader>dw  Show watch/expressions window
-<leader>dt  Show stack trace
-<leader>dr  Show registers
-<leader>dR  Restart debugger
-<leader>dq  Quit debugger
-
-:BreakpointToggle      Toggle at cursor
-:BreakpointConditional Set conditional breakpoint
-:BreakpointLogpoint    Set logpoint (logs instead of stopping)
-```
+| Keymap | Description | Context |
+|---|---|---|
+| `<leader>rn` | Rename symbol globally across project | Normal |
+| `<leader>ca` | Trigger LSP Code Actions (quick-fixes, imports) | Normal |
+| `<leader>lf` | Format document or selection | Normal / Visual |
+| `ysw<char>` | Surround word with character (e.g. `ysw"`) | Normal (Surround) |
+| `ds<char>` | Delete surrounding character (e.g. `ds"`) | Normal (Surround) |
+| `cs<old><new>`| Change surrounding character (e.g. `cs"'`) | Normal (Surround) |
+| `gcc` | Toggle line comment | Normal |
+| `gc` | Toggle visual selection comment | Visual |
+| `<C-d>` | Select word under cursor to enter multicursor mode | Normal / Visual |
+| `<leader>nc` | Generate docstring template | Normal (Neogen) |
 
 ---
 
-## 🧪 Testing
+## 5. Testing & Debugging (DAP + Neotest)
 
-*Requires: neotest plugin*
+### Test Runner
+| Keymap | Description |
+|---|---|
+| `<leader>tn` | Run nearest test |
+| `<leader>tf` | Run current file test |
+| `<leader>ta` | Run entire test suite |
+| `<leader>to` | Open test execution output window |
+| `<leader>ts` | Toggle visual test summary tree |
+| `<leader>tw` | Toggle automatic test watch mode |
 
-```
-<leader>tn  Test nearest (test under cursor)
-<leader>tf  Test current file
-<leader>ta  Test all (run entire suite)
-<leader>ts  Test summary (show results)
-<leader>tw  Watch tests (re-run on save)
-<leader>tq  Quit test runner
-```
-
----
-
-## 📝 Editing
-
-### Basic Editing
-```
-i           Insert mode (before cursor)
-a           Append mode (after cursor)
-o           Open new line below
-O           Open new line above
-jk          Exit insert mode (custom)
-
-<C-h>       Delete previous character (insert)
-<C-j>       Move line down (insert)
-<C-k>       Move line up (insert)
-
-dd          Delete line
-yy          Copy line
-p           Paste after
-P           Paste before
-v           Visual mode (select)
-```
-
-### Text Objects & Motions
-```
-w           Next word start
-b           Previous word start
-e           Next word end
-%           Jump to matching bracket
-
-t<char>     Till character
-f<char>     Find character
-T<char>     Till backward
-F<char>     Find backward
-
->           Indent
-<           Unindent
-=           Auto-indent
-```
-
-### Commenting
-```
-gcc         Toggle comment (line)
-gc          Toggle comment (visual selection)
-
-gcw         Comment word
-gcs         Comment sentence
-```
-
-### Autopairs & Brackets
-```
-(           Insert (, automatically adds )
-{           Insert {, automatically adds }
-[           Insert [, automatically adds ]
-
-<M-e>       Fast wrap selection (wrap with bracket)
-```
+### Debugger
+| Keymap | Description |
+|---|---|
+| `<leader>db` | Toggle debugger breakpoint on current line |
+| `<leader>dc` | Launch debugger or continue running |
+| `<leader>ds` | Step over next line |
+| `<leader>di` | Step into function call |
+| `<leader>do` | Step out of current function |
+| `<leader>dr` | Restart debugger session |
+| `<leader>dq` | Terminate debugger session |
+| `<leader>du` | Toggle graphical debugger panels manually |
 
 ---
 
-## 🔍 Searching
-
-### Find & Replace
-```
-/           Find (forward)
-?           Find (backward)
-n           Next match
-N           Previous match
-*           Find word under cursor (forward)
-#           Find word under cursor (backward)
-
-:s/old/new/g    Replace in line
-:%s/old/new/g   Replace in file
-:s/old/new/     Replace with confirmation
-```
-
-### Highlighting
-```
-<leader>u   Clear search highlight
-
-# Automatic highlighting
-- Reference highlighting (when hovering on symbol)
-- Incremental search highlighting
-- LSP semantic highlighting (if supported)
-```
-
----
-
-## 📋 Terminal Integration
-
-```
-<leader>th  Open terminal (horizontal split)
-<leader>tv  Open terminal (vertical split)
-<leader>tt  Open terminal (new tab)
-<leader>t   Toggle terminal (toggleterm)
-
-jk          Exit terminal mode
-```
-
----
-
-## 🎨 UI & Appearance
-
-### Tabs
-```
-<leader>to  Open new tab
-<leader>tx  Close current tab
-<leader>tn  Next tab
-<leader>tp  Previous tab
-```
-
-### General
-```
-<leader>qq  Quit without saving
-<leader>wq  Save and quit
-```
-
----
-
-## 🔧 Command Mode
-
-Common commands to type with `:` prefix:
-
-```
-:Mason              Open tool installer
-:Lazy               Plugin manager UI
-:LspInfo            Show LSP status
-:LspRestart         Restart LSP servers
-:Telescope          Fuzzy finder
-:Neotree            File explorer
-
-:set number         Show line numbers
-:set nonumber       Hide line numbers
-:set relativenumber Relative line numbers
-
-:Format             Format buffer (conform)
-:Lint               Lint buffer
-
-:help               Open help
-:q                  Quit
-:wq                 Save and quit
-:q!                 Quit without save
-:w                  Save
-:wa                 Save all
-:!command           Run shell command
-```
-
----
-
-## 🏃 Common Workflows
-
-### Edit a File Quickly
-
-1. `<leader>ff` → Find file
-2. Edit the file
-3. `<leader>lf` → Format
-4. `:w` → Save
-
-### Find & Replace
-
-1. `<leader>fg` → Live grep (find text)
-2. When in grep results: can open files
-3. `:s/old/new/g` → Replace in current buffer
-
-### Debug a Function
-
-1. `<leader>db` → Set breakpoint at problem line
-2. `:!python script.py` → Run your script
-3. Debugger pauses at breakpoint
-4. `K` → Hover to see variable values
-5. `<leader>ds` → Step over to next line
-
-### Rename a Symbol Safely
-
-1. Move cursor to symbol name
-2. `<leader>rn` → Rename
-3. Type new name
-4. Press Enter
-5. All occurrences updated automatically ✓
-
-### Format Entire Project
-
-```
-<leader>fa  Format all Python files (LSP)
-# Or use:
-:!black .   Format with Black
-```
-
-### Add Tests While Coding
-
-1. Write function
-2. `<leader>tn` → Run test under cursor (auto-discovers)
-3. Watch fails
-4. `<leader>tw` → Watch mode (auto re-run on save)
-5. Fix code
-6. Tests pass automatically ✓
-
----
-
-## 🌐 Multi-File Operations
-
-### Working Across Files
-```
-gd          Go to definition (even in other files!)
-gr          Show all references across project
-<leader>ca  Code action (may involve multiple files)
-<leader>rn  Rename across entire project
-```
-
-### Project-Wide Tasks
-```
-<leader>fg  Live grep (search entire project)
-<leader>fS  Workspace symbols (find anything)
-<leader>ta  Run all tests (project-wide)
-<leader>lf  Format all open buffers
-```
-
----
-
-## 🎯 Tips & Tricks
-
-### Repeat Last Action
-```
-.           Repeat last normal mode command
-@:          Repeat last command
-@@          Repeat last macro
-```
-
-### Quickfix List (Errors)
-```
-:copen      Open quickfix list
-:ccl        Close quickfix list
-:cn         Next error
-:cp         Previous error
-:cc 3       Go to error #3
-```
-
-### Macros
-```
-qa          Record macro to register 'a'
-...         Do actions...
-q           Stop recording
-@a          Play macro from register 'a'
-@@          Repeat last macro
-```
-
-### Marks
-```
-ma          Mark current position as 'a'
-'a          Jump to mark 'a'
-`a          Jump to exact column of mark 'a'
-:marks      Show all marks
-```
-
----
-
-## 🔧 Customization
-
-### How to Add Your Own Keymap
-
-Edit `lua/core/keymaps.lua`:
-
-```lua
--- Add this to define a custom keymap:
-utils.keymap("n", "<leader>xx", ":MyCommand<CR>", {
-  desc = "My custom command"
-})
-```
-
-### How to Change a Keymap
-
-Find the keymap in relevant file:
-- `lua/core/keymaps.lua` - Global keymaps
-- `lua/lsp/keymaps.lua` - LSP keymaps  
-- `lua/navigation/keymaps.lua` - Navigation keymaps
-
-Edit the mapping and reload config:
-```
-:so ~/.config/nvim/init.lua
-```
-
----
-
-## 📚 Learning Path
-
-### Day 1 - Essential Navigation
-Master these first:
-1. `<space>ff` - Find files
-2. `<space>fg` - Search text
-3. `gd` - Go to definition
-4. `K` - Hover help
-
-### Day 2 - Editing & Formatting
-1. Code actions `<space>ca`
-2. Rename `<space>rn`
-3. Format `<space>lf`
-4. Comments `gcc`
-
-### Day 3 - Advanced Features
-1. References `gr`
-2. Symbols `<space>fs`
-3. Debug `<space>db`
-4. Tests `<space>tn`
-
-### Beyond - Power User Mode
-1. Macros and marks
-2. Quickfix list
-3. Advanced text objects
-4. Custom workflows
-
----
-
-## 🆘 Troubleshooting
-
-### Keymap Not Working
-
-1. Check if plugin is loaded: `:Lazy`
-2. Check if mapped: `:map <leader>xx`
-3. Try calling directly: `:call MyFunction()`
-
-### Too Many Keymaps to Remember
-
-- Most used: ~15 keymaps (master these)
-- Common: ~50 keymaps (learn gradually)
-- Rare: ~100+ keymaps (look up as needed)
-
-### Want Different Keymaps
-
-Edit the keymap files, restart Neovim:
-```vim
-:so ~/.config/nvim/init.lua
-```
-
----
-
-## 📞 Help Resources
-
-```
-:help keymaps        Help on keybindings
-:help lsp            LSP documentation
-:help telescope      Telescope documentation
-
-# Online
-:h intro             Start Neovim help
-:h quickref          Quick reference
-:Telescope help_tags Search help tags
-```
-
----
-
-**Last Updated**: May 2026  
-**Neovim Version**: 0.9+
-
----
+## 6. Git Version Control
+
+| Keymap | Description |
+|---|---|
+| `]h` / `[h` | Jump to next / previous changed git hunk |
+| `<leader>hs` | Stage current changed git hunk |
+| `<leader>hr` | Reset current changed git hunk |
+| `<leader>hp` | Preview hunk difference inline |
+| `<leader>hb` | Show inline Git Blame for current line |
+| `<leader>gd` | Open dynamic graphical Diffview layout |
+| `<leader>gh` | Open commit history panel for current file |
