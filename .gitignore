@@ -1,0 +1,29 @@
+# ============================================================================
+# Git Ignore Configuration
+# ============================================================================
+
+# Compiled Lua folders & artifacts
+/lua-5.1.5/
+
+# Python caching & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing and type checking caches
+.pytest_cache/
+.mypy_cache/
+
+# Editor logs and state files
+*.log
+/checkhealth.log
+
+# VS Code settings
+.vscode/
+
+# Personal learning notes
+/notes.txt
+
+# macOS System Files
+.DS_Store
+Thumbs.db
