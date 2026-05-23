@@ -126,3 +126,12 @@ Master these first to handle 80% of your daily operations:
 | `<leader>hb` | Show inline Git Blame for current line |
 | `<leader>gd` | Open dynamic graphical Diffview layout |
 | `<leader>gh` | Open commit history panel for current file |
+
+---
+
+## 7. Productivity & Markdown Tools
+
+| Keymap | Description | Mode |
+|---|---|---|
+| `<leader>tm` | Toggle Markdown inline rendering (render-markdown.nvim) | Normal |
+| `<leader>mp` | Toggle Markdown browser live preview (markdown-preview.nvim) | Normal |

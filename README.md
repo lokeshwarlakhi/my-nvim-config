@@ -95,7 +95,7 @@ Instead of scattered configurations, all setups (LSP, Formatters, Linters, Debug
 | `<leader>gd` | Normal | Open Diffview (graphical side-by-side git diff) |
 | `<leader>gh` | Normal | View current file commit history |
 
-### LSP & Coding Tools
+### LSP, Coding & Workspace Tools
 | Shortcut | Mode | Action |
 | --- | --- | --- |
 | `gd` | Normal | Jump to Symbol Definition |
@@ -104,6 +104,8 @@ Instead of scattered configurations, all setups (LSP, Formatters, Linters, Debug
 | `<leader>rn` | Normal | Rename symbol workspace-wide |
 | `<leader>ca` | Normal | Open Code Actions menu |
 | `<leader>lf` | Normal | Format document (via `conform.nvim`) |
+| `<leader>tm` | Normal | Toggle Markdown inline rendering (render-markdown.nvim) |
+| `<leader>mp` | Normal | Toggle Markdown browser live preview (markdown-preview.nvim) |
 
 ---
 
