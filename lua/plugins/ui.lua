@@ -144,6 +144,7 @@ return {
     "karb94/neoscroll.nvim",
     event = "VeryLazy",
     config = function()
+      vim.opt.mouse = 'a'  -- enable mouse scrolling inside Neovim
       require("neoscroll").setup({
         mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
         hide_cursor = true,

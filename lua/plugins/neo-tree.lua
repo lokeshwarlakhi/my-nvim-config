@@ -9,6 +9,7 @@ return {
 	},
 	keys = {
 		{ "<leader>e", ":Neotree toggle<CR>", desc = "Toggle Explorer" },
+		{ "<leader>zc", function() require("neo-tree.command").execute({ action = "close_all_nodes" }) end, desc = "Collapse all folders" },
 	},
 	opts = {
 		default_source = "filesystem",
@@ -54,6 +55,8 @@ return {
 					["<bs>"] = "navigate_up",
 					["."] = "set_root",
 					["H"] = "toggle_hidden",
+					["<Esc>"] = "clear_filter",  -- press Esc to cancel the find dialog / clear filter
+					["zc"] = "close_all_nodes",  -- collapse all folders (inside Neo‑tree)
 				},
 			},
 		},
