@@ -45,7 +45,8 @@ The configuration is organized under `lua/` as a highly modular architecture whe
 │   │   ├── git.lua          # gitsigns gutter blame, diffview panel
 │   │   ├── tools.lua        # toggleterm, docstring generator, markdown preview
 │   │   ├── molten.lua       # molten-nvim interactive python client + image.nvim
-│   │   └── slime.lua        # vim-slime + IPython terminal split integration
+│   │   ├── slime.lua        # vim-slime + IPython terminal split integration
+│   │   └── venv-selector.lua # virtualenv selector utility for Pyright/LSP
 │   │
 │   └── utils/               # Shared Utilities
 │       ├── helpers.lua      # Standard pcall wrapper, keymap generators
