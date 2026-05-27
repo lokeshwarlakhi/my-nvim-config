@@ -117,7 +117,7 @@ To ensure high performance, plugins are only loaded when they are actually neede
 
 | Plugin Category | Trigger | Rationale |
 |---|---|---|
-| **Theme (github-theme)** | `lazy = false` | Must load instantly to prevent screen flashing. |
+| **Theme (neovim-ayu)** | `lazy = false` | Must load instantly to prevent screen flashing. |
 | **LSP Infrastructure** | `BufReadPre`, `BufNewFile` | Loads as soon as you open a code file. |
 | **Completion (cmp)** | `InsertEnter` | Loads when you switch to Insert mode to start typing. |
 | **Formatting (conform)** | `BufWritePre` | Runs right before you save a buffer. |
