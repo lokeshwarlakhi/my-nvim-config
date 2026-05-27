@@ -11,18 +11,24 @@ return {
     lazy = true,
   },
   
-  -- Colorscheme (Shatur/neovim-ayu)
+  -- Colorscheme (projekt0n/github-nvim-theme)
   {
-    "Shatur/neovim-ayu",
+    "projekt0n/github-nvim-theme",
     lazy = false,
     priority = 1000,
     config = function()
       local settings = require("config.settings")
-      require("ayu").setup({
-        mirage = true, -- Set to true to use the Mirage variant
-        terminal = true,
+      require("github-theme").setup({
+        options = {
+          transparent = false,
+          styles = {
+            comments = "italic",
+            keywords = "bold",
+            types = "italic,bold",
+          }
+        }
       })
-      local colorscheme = settings.get("ui.colorscheme", "ayu-mirage")
+      local colorscheme = settings.get("ui.colorscheme", "github_light_default")
       vim.cmd("colorscheme " .. colorscheme)
     end
   },
