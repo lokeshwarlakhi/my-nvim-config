@@ -28,7 +28,7 @@ return {
           }
         }
       })
-      local colorscheme = settings.get("ui.colorscheme", "github_light_default")
+      local colorscheme = settings.get("ui.colorscheme", "github_dark")
       vim.cmd("colorscheme " .. colorscheme)
     end
   },

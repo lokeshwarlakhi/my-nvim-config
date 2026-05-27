@@ -127,8 +127,8 @@ M.git = {
 -- UI & VISUAL APPEARANCE
 -- ============================================================================
 M.ui = {
-  -- Colorscheme options: github_light_default, catppuccin, gruvbox, etc.
-  colorscheme = "github_light_default",
+  -- Colorscheme options: github_dark, catppuccin, gruvbox, etc.
+  colorscheme = "github_dark",
   border = "rounded",
 }
 
