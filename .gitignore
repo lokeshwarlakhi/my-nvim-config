@@ -27,3 +27,6 @@ __pycache__/
 # macOS System Files
 .DS_Store
 Thumbs.db
+
+# Verification Guide
+/VERIFY.md
